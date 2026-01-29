@@ -206,5 +206,6 @@ SIMPLE_JWT = {
 }
 
 MEDIA_URL = '/midia/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'midia')
+if DEBUG:
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'midia')
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
