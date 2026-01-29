@@ -73,12 +73,14 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost",
     "http://127.0.0.1",
     "https://batna.ifrn.edu.br",
+    "https://vitrinepp.netlify.app",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost",
     "http://127.0.0.1",
     "https://batna.ifrn.edu.br",
+    "https://vitrinepp.netlify.app",
 ]
 
 SESSION_COOKIE_SECURE = True
