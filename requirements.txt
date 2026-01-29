@@ -6,3 +6,5 @@ django-filter==25.1
 Pillow
 python-dotenv
 gunicorn
+cloudinary
+django-cloudinary-storage
