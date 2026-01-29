@@ -1,0 +1,67 @@
+[
+{
+  "model": "usuarios.usuario",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$6EKJGDzW3KGHTDBldbhUaX$R9BVMxApunzUfQUEWTlJOZF+qlcA5fFeMz8Kg+TnObI=",
+    "last_login": "2025-10-13T19:46:58.196Z",
+    "is_superuser": true,
+    "username": "Admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-10-13T19:46:08.568Z",
+    "tipo": "admin",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "usuarios.usuario",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$q5kihgUdcDfeONWDTX1w5S$LKXET96l1gC+I+pSzGeqq0Xz0zdXSh13GA8Icnps+BE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "User",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-10-13T19:47:23.423Z",
+    "tipo": "staff",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "marcas.marca",
+  "pk": 1,
+  "fields": {
+    "nome": "Marca de Design",
+    "descricao": "Marca criada para designs",
+    "foto_perfil": "",
+    "banner": "",
+    "email": "designs@gmail.com",
+    "telefone": "+55 9 123-456"
+  }
+},
+{
+  "model": "roupas.produto",
+  "pk": 1,
+  "fields": {
+    "nome": "Camisa",
+    "descricao": "Peca de roupa",
+    "preco": "100",
+    "img": "produtos/camisa_branca.jpg",
+    "destaque": true,
+    "data_destaque": "2025-10-13T19:51:12.464Z",
+    "n_visualizacoes": 1,
+    "genero": "unissex",
+    "marca": 1
+  }
+}
+]
