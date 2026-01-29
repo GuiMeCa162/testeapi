@@ -205,7 +205,7 @@ SIMPLE_JWT = {
     "BLACKLIST_AFTER_ROTATION": False,
 }
 
-MEDIA_URL = '/midia/'
 if DEBUG:
+    MEDIA_URL = '/midia/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'midia')
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
