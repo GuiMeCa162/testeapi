@@ -18,6 +18,15 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
+CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
+if not CLOUDINARY_URL:
+    cloud_name = os.environ.get("CLOUDINARY_CLOUD_NAME")
+    api_key = os.environ.get("CLOUDINARY_API_KEY")
+    api_secret = os.environ.get("CLOUDINARY_API_SECRET")
+    if cloud_name and api_key and api_secret:
+        CLOUDINARY_URL = f"cloudinary://{api_key}:{api_secret}@{cloud_name}"
+        os.environ["CLOUDINARY_URL"] = CLOUDINARY_URL
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -58,7 +67,18 @@ INSTALLED_APPS += [
     'cloudinary_storage',
 ]
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
+
+CLOUDINARY_STORAGE = {
+    "CLOUDINARY_URL": CLOUDINARY_URL,
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
