@@ -54,7 +54,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary',
     'django_filters',
     'rest_framework',
     'rest_framework_simplejwt',
@@ -62,10 +64,13 @@ INSTALLED_APPS = [
     'corsheaders',
 ]
 
-INSTALLED_APPS += [
-    'cloudinary',
-    'cloudinary_storage',
-]
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dkwpqnmdt',
+    'API_KEY': '329195819545879',
+    'API_SECRET': 'QMZxBpYwIzynrvjZdWEd2EeFqbw'
+}
+
+MEDIA_URL = '/midia/'
 
 STORAGES = {
     "default": {
