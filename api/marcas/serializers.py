@@ -17,18 +17,6 @@ class MarcaSerializer(serializers.ModelSerializer):
             "telefone",
         ]
 
-    def to_representation(self, instance):
-        representation = super().to_representation(instance)
-        request = self.context.get("request")
-
-        if request:
-            if instance.foto_perfil:
-                representation["foto_perfil"] = request.build_absolute_uri(instance.foto_perfil.url)
-            if instance.banner:
-                representation["banner"] = request.build_absolute_uri(instance.banner.url)
-
-        return representation
-
 
 class MarcaMaisVisitadaSerializer(serializers.ModelSerializer):
     total_views = serializers.IntegerField()
