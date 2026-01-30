@@ -51,10 +51,14 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     'corsheaders',
+]
+
+INSTALLED_APPS += [
     'cloudinary',
     'cloudinary_storage',
-    
 ]
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -205,7 +209,6 @@ SIMPLE_JWT = {
     "BLACKLIST_AFTER_ROTATION": False,
 }
 
-if DEBUG:
-    MEDIA_URL = '/midia/'
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'midia')
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# if DEBUG:
+#     MEDIA_URL = '/midia/'
+#     MEDIA_ROOT = os.path.join(BASE_DIR, 'midia')
